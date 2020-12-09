@@ -33,16 +33,25 @@ const Game = () => {
     
     const current = history[stepNumber];
     const winner = calculateWinner(current.squares);
-    const moves = history.map((step, move) => {
+    const moves = history.map((step, move) => { 
       const desc = move ?
-        'Go to move #' + move + '  Last move' + 'C' +((movment[move-1]%3)+1) + 'F' +((Math.floor(movment[move-1]/3))+1)  :
+        'Go to move #' + move + '  Last move  C' +((movment[move-1]%3)+1) + 'F' +((Math.floor(movment[move-1]/3))+1)  :
         'Go to game start';
-        
-        return (
+         if ( move === stepNumber){
+        return (          
+            <li key = {move}>
+              <button onClick={() => jumpTo(move)}><strong>{desc}</strong></button>
+            </li>
+          );
+        }
+        else {
+          return (          
             <li key = {move}>
               <button onClick={() => jumpTo(move)}>{desc}</button>
             </li>
-          );
+             );
+        }
+        
         });
       
     let status;
