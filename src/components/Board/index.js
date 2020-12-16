@@ -4,10 +4,12 @@ import Square from '../Square';
 
 
 const Board = (props) => {
+
     
-    const renderSquare = i => {
+    const renderSquare = i => { 
+       
         return (<Square value = {props.squares[i]}
-          onClick={()=> props.onClick(i)} key = {i} />
+          onClick={()=> props.onClick(i)} key = {i} bright = {  (props.highlight != null &&  props.highlight.includes(i))  ?  true : false  } />
         );
       }
 
