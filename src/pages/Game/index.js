@@ -53,9 +53,8 @@ const Game = () => {
       const winner = current.squares[line[0]]
       status = 'Winner: ' + winner;
     } else {
-      status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+      history.length === 10 ?status= 'Empate': status = 'Next player: ' + (xIsNext ? 'X' : 'O')
     }
-    console.log(line)
     return (
         <div className="game">
         <div className="game-board">

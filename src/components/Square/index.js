@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Square = (props) => {
-  console.log(props.bright)
     return (
         <button className={ props.bright ?"squareBright": "square"}
         onClick = {props.onClick}>
